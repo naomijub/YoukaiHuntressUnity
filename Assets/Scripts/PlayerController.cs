@@ -28,7 +28,17 @@ public class PlayerController : MonoBehaviour {
         else if (h < 0 && facingRight) {
             Flip();
         }
+        Jump();
 	}
+
+    private void Jump()
+    {
+        float v = Input.GetAxis("Vertical");
+        if (v > 0.0f) {
+            Debug.Log("Jump");
+            rb2d.velocity += new Vector2(0, 4.0f);
+        }
+    }
 
     private void Flip()
     {
